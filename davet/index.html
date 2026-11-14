@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilgilen · Kapış daveti</title>
+<meta name="description" content="Bilgilen'de 5 soruluk bir kapışmaya çağrıldın.">
+<meta property="og:title" content="Bilgilen'de kapışmaya çağrıldın">
+<meta property="og:description" content="5 soru, tek kazanan. Dokun ve kapış.">
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F5EFE2; color: #1B1B1F;
+         font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { width: min(92vw, 420px); padding: 28px 24px; background: #fff; border: 1.5px solid #D9CDB8; border-bottom-width: 5px;
+         border-radius: 18px; text-align: center; }
+  h1 { margin: 0 0 8px; font-size: 26px; line-height: 1.2; }
+  p { margin: 0 0 18px; color: #55524C; line-height: 1.5; }
+  .code { font: 700 18px/1.4 ui-monospace, Menlo, Consolas, monospace; letter-spacing: 1px; padding: 12px;
+          border: 2px dashed #B8AA90; border-radius: 12px; margin-bottom: 18px; user-select: all; word-break: break-all; }
+  a.button { display: block; padding: 15px; border-radius: 16px; font-weight: 700; text-decoration: none; margin-bottom: 10px; }
+  a.primary { background: #1B1B1F; color: #fff; }
+  a.secondary { border: 1.5px solid #B8AA90; color: #1B1B1F; }
+  small { color: #7A766E; }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kapışmaya çağrıldın!</h1>
+  <p id="lead">5 soru, tek kazanan. Bilgilen uygulamasında aç ve aynı soruları sen de çöz.</p>
+  <div class="code" id="code" hidden></div>
+  <a class="button primary" id="open" href="#">Bilgilen'de aç</a>
+  <!-- Mağaza bağlantıları: uygulama yayınlanınca href'leri doldur ve hidden'ı kaldır. -->
+  <a class="button secondary" id="play" href="#" hidden>Google Play'den indir</a>
+  <a class="button secondary" id="ios" href="#" hidden>App Store'dan indir</a>
+  <small id="hint">Uygulama açılmadıysa: Bilgilen &gt; Kapış &gt; "Arkadaşımdan kod geldi" bölümüne yukarıdaki kodu yapıştır.</small>
+</main>
+<script>
+  // Davet kodu yalnızca tarayıcıda okunur; hiçbir yere gönderilmez.
+  (function () {
+    var raw = new URLSearchParams(location.search).get('kod') || '';
+    var code = raw.toUpperCase().replace(/[^0-9A-Z-]/g, '').slice(0, 24);
+    var open = document.getElementById('open');
+    if (code === '') {
+      document.getElementById('lead').textContent = 'Bu bağlantıda kapış kodu yok. Arkadaşından daveti yeniden göndermesini iste.';
+      open.hidden = true;
+      document.getElementById('hint').hidden = true;
+      return;
+    }
+    var box = document.getElementById('code');
+    box.textContent = code;
+    box.hidden = false;
+    var deepLink = 'bilgilen://kapis?kod=' + encodeURIComponent(code);
+    open.href = deepLink;
+    // Uygulama yüklüyse kendiliğinden açılır; değilse sayfa olduğu gibi kalır.
+    setTimeout(function () { location.href = deepLink; }, 300);
+  })();
+</script>
+</body>
+</html>
