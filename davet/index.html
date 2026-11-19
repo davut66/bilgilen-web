@@ -38,8 +38,10 @@
 <script>
   // Davet kodu yalnızca tarayıcıda okunur; hiçbir yere gönderilmez.
   (function () {
-    var raw = new URLSearchParams(location.search).get('kod') || '';
-    var code = raw.toUpperCase().replace(/[^0-9A-Z-]/g, '').slice(0, 24);
+    var params = new URLSearchParams(location.search);
+    var room = (params.get('oda') || '').toUpperCase().replace(/[^A-HJ-NP-Z2-9]/g, '').slice(0, 6);
+    var raw = params.get('kod') || '';
+    var code = room.length === 6 ? room : raw.toUpperCase().replace(/[^0-9A-Z-]/g, '').slice(0, 24);
     var open = document.getElementById('open');
     if (code === '') {
       document.getElementById('lead').textContent = 'Bu bağlantıda kapış kodu yok. Arkadaşından daveti yeniden göndermesini iste.';
@@ -47,10 +49,14 @@
       document.getElementById('hint').hidden = true;
       return;
     }
+    if (room.length === 6) {
+      // Canlı kapış: arkadaşın seni bekliyor, girdiğin an ikiniz aynı anda başlarsınız.
+      document.getElementById('lead').textContent = 'Arkadaşın seni bekliyor. Bilgilen\'de açtığın an ikiniz aynı anda başlarsınız.';
+    }
     var box = document.getElementById('code');
     box.textContent = code;
     box.hidden = false;
-    var deepLink = 'bilgilen://kapis?kod=' + encodeURIComponent(code);
+    var deepLink = room.length === 6 ? 'bilgilen://kapis?oda=' + room : 'bilgilen://kapis?kod=' + encodeURIComponent(code);
     open.href = deepLink;
     // Uygulama yüklüyse kendiliğinden açılır; değilse sayfa olduğu gibi kalır.
     setTimeout(function () { location.href = deepLink; }, 300);
