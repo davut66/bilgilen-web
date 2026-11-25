@@ -40,8 +40,9 @@
   Veri sorumlusunun temsilcisi bulunmamaktadır.</p>
 
   <h2>2. Uygulamada hiç toplanmayan veriler</h2>
-  <p>Uygulama hesap açtırmaz. Adın, soyadın, T.C. kimlik numaran, e-posta adresin, telefon numaran, konumun, rehberin,
-  fotoğrafların ve reklam kimliğin alınmaz. Seçtiğin dersler, bildirim ayarların, açtığın bilgiler, mini soru
+  <p>Uygulamayı kullanmak için hesap açman gerekmez; yalnızca Kapış ligine katılmak istersen giriş yaparsın (bkz.
+  3. bölüm, "Lig hesabı"). Adın, soyadın, T.C. kimlik numaran, telefon numaran, konumun, rehberin, fotoğrafların ve
+  reklam kimliğin alınmaz; e-posta adresin yalnızca lige giriş yaparsan işlenir. Seçtiğin dersler, bildirim ayarların, açtığın bilgiler, mini soru
   cevapların, favorilerin, serin ve istatistiklerin yalnızca telefonunda saklanır; bize gönderilmez ve veri
   sorumlusu bunlara erişemez. Bildirimler telefonunda planlanan yerel bildirimlerdir. Arkadaşınla sırayla
   oynadığın kapışma sunucu kullanmaz; sonuç, senin paylaştığın kısa bir kodun içindedir.</p>
@@ -63,6 +64,16 @@
         sıralaması ve sezon rozetleri.</td>
         <td>Online kapış hizmetinin sunulması için zorunlu olması: m.5/2-c (sözleşmenin kurulması veya ifasıyla
         doğrudan ilgili olması).</td>
+      </tr>
+      <tr>
+        <td><strong>Lig hesabı (isteğe bağlı):</strong> lige Apple, Google ya da e-postana gönderilen kodla girersen
+        e-posta adresin (Apple ile girişte Apple'ın verdiği gizli yönlendirme adresi olabilir), hesap kimliğin, giriş
+        yöntemin, hesabın açılma ve son giriş zamanı. Apple ve Google'dan adın, fotoğrafın ya da rehberin alınmaz.</td>
+        <td>Lig puanını ve sezon rozetlerini sana ait bir hesaba yazmak; telefon değiştirdiğinde ya da Uygulamayı
+        yeniden yüklediğinde profilini geri vermek; aynı kişinin birden çok hesapla sıralamayı bozmasını önlemek;
+        giriş kodunu göndermek.</td>
+        <td>Lig hizmetinin sunulması için zorunlu olması: m.5/2-c (sözleşmenin kurulması veya ifasıyla doğrudan
+        ilgili olması); hile ve kötüye kullanımı önlemek için m.5/2-f (meşru menfaat).</td>
       </tr>
       <tr>
         <td><strong>Kapış sonuçları:</strong> oynadığın ders ve sorular, cevapların doğru olup olmadığı, kaç doğru
@@ -124,7 +135,7 @@
 
   <h2>4. Kişisel verilerin toplanma yöntemi</h2>
   <p>Kişisel verilerin, Uygulama üzerinden, elektronik ortamda ve <strong>tamamen otomatik yollarla</strong> toplanır:
-  takma adı ve ili sen girersin; oyuncu kimliği ve kurulum kimliği telefonunda rastgele üretilir; kapış sonuçları,
+  takma adı, ili ve (lige katılırsan) e-posta adresini sen girersin ya da Apple veya Google senin onayınla iletir; oyuncu kimliği ve kurulum kimliği telefonunda rastgele üretilir; kapış sonuçları,
   bildirimler ve istatistik olayları sen ilgili özelliği kullandığında Uygulama tarafından gönderilir.</p>
 
   <h2>5. Kişisel verilerin kimlere ve hangi amaçla aktarılabileceği</h2>
@@ -135,8 +146,12 @@
     eden arkadaşına gösterilir.</li>
     <li><strong>Hizmet sağlayıcılar (veri işleyen):</strong>
       <ul>
-        <li>Supabase Inc.: online kapış, sıralama ve bildirim verilerinin barındırıldığı veritabanı hizmeti.
-        Sunucular Avrupa Birliği'nde, Almanya'dadır (Frankfurt).</li>
+        <li>Supabase Inc.: online kapış, sıralama, lig hesabı ve bildirim verilerinin barındırıldığı veritabanı ve
+        giriş hizmeti. Sunucular Avrupa Birliği'nde, Almanya'dadır (Frankfurt).</li>
+        <li>E-posta gönderim hizmeti: e-postayla girişte giriş kodunun sana ulaştırılması (yalnızca e-posta adresin
+        ve kod).</li>
+        <li>Apple Inc. ve Google LLC: Apple ya da Google ile girişi seçersen, kimliğinin bu şirketlerce doğrulanması.
+        Bu durumda verilerin onların kendi gizlilik politikalarına da tabidir.</li>
         <li>PostHog Inc.: anonim kullanım istatistiğinin barındırılması. Sunucular Avrupa Birliği'ndedir.</li>
         <li>RevenueCat Inc. (Premium satışa açıldığında): abonelik durumunun mağazalardan doğrulanması.</li>
       </ul>
@@ -157,8 +172,10 @@
 
   <h2>6. Saklama süreleri</h2>
   <ul>
-    <li>Online kapış profili, sezon puanları ve rozetler: sen "Online profilimi sil" diyene kadar; iki yıl boyunca
-    hiç oynamazsan kendiliğinden silinir.</li>
+    <li>Online kapış profili, sezon puanları ve rozetler: sen "Online profilimi sil" ya da "Lig hesabımı sil" diyene
+    kadar; iki yıl boyunca hiç oynamazsan kendiliğinden silinir.</li>
+    <li>Lig hesabı (e-posta adresi): sen Ben &gt; Kapış bölümünden "Lig hesabımı sil" diyene kadar; hesap silinince
+    profilin, puanların ve rozetlerin de silinir.</li>
     <li>Tek tek maç ve tur kayıtları: 30 gün.</li>
     <li>Canlı arkadaş kapışması odaları: 1 gün.</li>
     <li>Takma ad bildirimleri: 90 gün.</li>
@@ -200,9 +217,9 @@
   </ul>
   <p>Başvurunda şunlar bulunmalıdır: adın, soyadın ve yazılı başvuruda imzan; T.C. vatandaşıysan T.C. kimlik
   numaran, yabancıysan uyruğun ve pasaport ya da kimlik numaran; tebligata esas yerleşim yeri veya iş yeri adresin;
-  varsa bildirime esas e-posta adresin, telefon numaran; talebinin konusu. Uygulama hesap açtırmadığı için, kapış
-  verilerinle ilgili taleplerde takma adını ve Ben &gt; Kapış bölümünde görünen oyuncu kodunu yazman, verilerini
-  bulmamızı sağlar.</p>
+  varsa bildirime esas e-posta adresin, telefon numaran; talebinin konusu. Kapış verilerinle ilgili taleplerde takma
+  adını ve Ben &gt; Kapış bölümünde görünen oyuncu kodunu (lige katıldıysan giriş yaptığın e-posta adresini) yazman,
+  verilerini bulmamızı sağlar.</p>
   <p>Başvurun, niteliğine göre en kısa sürede ve en geç <strong>otuz gün</strong> içinde ücretsiz olarak sonuçlandırılır.
   İşlemin ayrıca bir maliyet gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulunca belirlenen tarifedeki ücret
   alınabilir. Başvurunun reddedilmesi, verilen cevabı yetersiz bulman veya süresinde cevap verilmemesi hâlinde,
